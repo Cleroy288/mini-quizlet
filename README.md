@@ -1,4 +1,4 @@
-# Intello
+# Mini-Quizlet
 
 A simple Quizlet-like quiz app built for an interview in ~1h30.
 
