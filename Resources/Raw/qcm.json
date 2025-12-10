@@ -1,0 +1,172 @@
+{
+  "sets": [
+    {
+      "name": "Python Basics",
+      "description": "Fundamental Python syntax and concepts",
+      "questions": [
+        {
+          "text": "What is the output of print(2 ** 3)?",
+          "answers": [
+            { "text": "6", "isCorrect": false },
+            { "text": "8", "isCorrect": true },
+            { "text": "9", "isCorrect": false },
+            { "text": "5", "isCorrect": false }
+          ],
+          "explanation": "The ** operator is exponentiation. 2 ** 3 = 2³ = 8"
+        },
+        {
+          "text": "Which keyword is used to define a function in Python?",
+          "answers": [
+            { "text": "function", "isCorrect": false },
+            { "text": "func", "isCorrect": false },
+            { "text": "def", "isCorrect": true },
+            { "text": "define", "isCorrect": false }
+          ],
+          "explanation": "In Python, functions are defined using the 'def' keyword followed by the function name and parentheses."
+        },
+        {
+          "text": "What is the correct way to create a comment in Python?",
+          "answers": [
+            { "text": "// comment", "isCorrect": false },
+            { "text": "/* comment */", "isCorrect": false },
+            { "text": "# comment", "isCorrect": true },
+            { "text": "-- comment", "isCorrect": false }
+          ],
+          "explanation": "Python uses the # symbol for single-line comments. Multi-line comments can use triple quotes."
+        },
+        {
+          "text": "What does len([1, 2, 3, 4, 5]) return?",
+          "answers": [
+            { "text": "4", "isCorrect": false },
+            { "text": "5", "isCorrect": true },
+            { "text": "6", "isCorrect": false },
+            { "text": "Error", "isCorrect": false }
+          ],
+          "explanation": "The len() function returns the number of items in a list. This list has 5 elements."
+        },
+        {
+          "text": "Which of these is a valid variable name in Python?",
+          "answers": [
+            { "text": "2variable", "isCorrect": false },
+            { "text": "my-variable", "isCorrect": false },
+            { "text": "my_variable", "isCorrect": true },
+            { "text": "class", "isCorrect": false }
+          ],
+          "explanation": "Variable names can contain letters, numbers, and underscores, but cannot start with a number or be a reserved keyword like 'class'."
+        }
+      ]
+    },
+    {
+      "name": "Python Data Structures",
+      "description": "Lists, dictionaries, tuples and sets",
+      "questions": [
+        {
+          "text": "What is the output of [1, 2, 3] + [4, 5]?",
+          "answers": [
+            { "text": "[1, 2, 3, 4, 5]", "isCorrect": true },
+            { "text": "[5, 7, 8]", "isCorrect": false },
+            { "text": "Error", "isCorrect": false },
+            { "text": "[[1, 2, 3], [4, 5]]", "isCorrect": false }
+          ],
+          "explanation": "The + operator concatenates lists, creating a new list with all elements from both lists."
+        },
+        {
+          "text": "How do you access the value 'apple' in {'fruit': 'apple', 'color': 'red'}?",
+          "answers": [
+            { "text": "dict[0]", "isCorrect": false },
+            { "text": "dict['fruit']", "isCorrect": true },
+            { "text": "dict.fruit", "isCorrect": false },
+            { "text": "dict(fruit)", "isCorrect": false }
+          ],
+          "explanation": "Dictionary values are accessed using square brackets with the key name: dict['fruit']"
+        },
+        {
+          "text": "What is the main difference between a list and a tuple?",
+          "answers": [
+            { "text": "Lists are faster", "isCorrect": false },
+            { "text": "Tuples can only hold numbers", "isCorrect": false },
+            { "text": "Lists are mutable, tuples are immutable", "isCorrect": true },
+            { "text": "There is no difference", "isCorrect": false }
+          ],
+          "explanation": "Lists can be modified after creation (mutable), while tuples cannot be changed once created (immutable)."
+        },
+        {
+          "text": "What does {1, 2, 2, 3, 3, 3} evaluate to?",
+          "answers": [
+            { "text": "{1, 2, 2, 3, 3, 3}", "isCorrect": false },
+            { "text": "{1, 2, 3}", "isCorrect": true },
+            { "text": "[1, 2, 3]", "isCorrect": false },
+            { "text": "Error", "isCorrect": false }
+          ],
+          "explanation": "Sets automatically remove duplicates, so only unique values remain: {1, 2, 3}"
+        },
+        {
+          "text": "What is the output of list('hello')?",
+          "answers": [
+            { "text": "['hello']", "isCorrect": false },
+            { "text": "['h', 'e', 'l', 'l', 'o']", "isCorrect": true },
+            { "text": "Error", "isCorrect": false },
+            { "text": "('h', 'e', 'l', 'l', 'o')", "isCorrect": false }
+          ],
+          "explanation": "The list() function converts a string into a list of individual characters."
+        }
+      ]
+    },
+    {
+      "name": "Python Functions",
+      "description": "Function definitions, parameters and return values",
+      "questions": [
+        {
+          "text": "What does a function return if no return statement is specified?",
+          "answers": [
+            { "text": "0", "isCorrect": false },
+            { "text": "Empty string", "isCorrect": false },
+            { "text": "None", "isCorrect": true },
+            { "text": "Error", "isCorrect": false }
+          ],
+          "explanation": "Functions without an explicit return statement return None by default."
+        },
+        {
+          "text": "What is *args used for in a function definition?",
+          "answers": [
+            { "text": "To define required arguments", "isCorrect": false },
+            { "text": "To accept variable number of positional arguments", "isCorrect": true },
+            { "text": "To accept keyword arguments", "isCorrect": false },
+            { "text": "To multiply arguments", "isCorrect": false }
+          ],
+          "explanation": "*args allows a function to accept any number of positional arguments, which are collected into a tuple."
+        },
+        {
+          "text": "What is the output of (lambda x: x * 2)(5)?",
+          "answers": [
+            { "text": "10", "isCorrect": true },
+            { "text": "25", "isCorrect": false },
+            { "text": "Error", "isCorrect": false },
+            { "text": "lambda", "isCorrect": false }
+          ],
+          "explanation": "This creates an anonymous function that doubles its input, then immediately calls it with 5, returning 10."
+        },
+        {
+          "text": "What is **kwargs used for?",
+          "answers": [
+            { "text": "To square arguments", "isCorrect": false },
+            { "text": "To accept variable number of keyword arguments", "isCorrect": true },
+            { "text": "To define default values", "isCorrect": false },
+            { "text": "To create a dictionary", "isCorrect": false }
+          ],
+          "explanation": "**kwargs allows a function to accept any number of keyword arguments, which are collected into a dictionary."
+        },
+        {
+          "text": "What is the scope of a variable defined inside a function?",
+          "answers": [
+            { "text": "Global", "isCorrect": false },
+            { "text": "Local to that function", "isCorrect": true },
+            { "text": "Available everywhere", "isCorrect": false },
+            { "text": "Module level", "isCorrect": false }
+          ],
+          "explanation": "Variables defined inside a function have local scope and are only accessible within that function."
+        }
+      ]
+    }
+  ]
+}

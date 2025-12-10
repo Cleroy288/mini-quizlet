@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Intello.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Intello.Pages"
+    Title="Intello"
+    FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+    <ShellContent
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate pages:DashboardPage}"
+        Route="DashboardPage" />
+    
+    <ShellContent
+        Title="QCM List"
+        ContentTemplate="{DataTemplate pages:QcmListPage}"
+        Route="QcmListPage" />
+    
+    <ShellContent
+        Title="QCM Quiz"
+        ContentTemplate="{DataTemplate pages:QcmQuizPage}"
+        Route="QcmQuizPage" />
+    
+    <ShellContent
+        Title="QCM Results"
+        ContentTemplate="{DataTemplate pages:QcmResultsPage}"
+        Route="QcmResultsPage" />
+    
+    <ShellContent
+        Title="Flashcards"
+        ContentTemplate="{DataTemplate pages:FlashcardPage}"
+        Route="FlashcardPage" />
+    
+    <ShellContent
+        Title="Code Game"
+        ContentTemplate="{DataTemplate pages:CodeGamePage}"
+        Route="CodeGamePage" />
+
+</Shell>

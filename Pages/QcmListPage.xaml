@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Intello.Pages.QcmListPage"
+             Title="QCM Quiz"
+             BackgroundColor="#0a0a12">
+    
+    <Grid>
+        <!-- Grid Background Pattern -->
+        <Grid ColumnDefinitions="*,*,*,*,*,*,*,*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*" Opacity="0.15">
+            <BoxView Grid.Column="0" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="1" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="2" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="3" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="4" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="5" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="6" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="7" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="8" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="9" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="10" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Row="0" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="1" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="2" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="3" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="4" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="5" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="6" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="7" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="8" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="9" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="10" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+        </Grid>
+        
+        <!-- Main Content -->
+        <Grid RowDefinitions="Auto,*" Padding="0">
+            
+            <!-- Header -->
+            <Border Grid.Row="0" BackgroundColor="#12121a" StrokeThickness="0" Padding="60,30">
+                <Grid ColumnDefinitions="Auto,*">
+                    <!-- Back Button -->
+                    <Border Grid.Column="0" 
+                            BackgroundColor="#1a1a24" 
+                            StrokeThickness="0"
+                            Padding="14,10"
+                            StrokeShape="RoundRectangle 8"
+                            VerticalOptions="Center">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBackClicked"/>
+                        </Border.GestureRecognizers>
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="←" FontSize="14" TextColor="#6b6b7e" VerticalOptions="Center"/>
+                            <Label Text="Back" FontSize="13" TextColor="#6b6b7e" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </Border>
+                    
+                    <!-- Title -->
+                    <VerticalStackLayout Grid.Column="1" Spacing="4" HorizontalOptions="Center" VerticalOptions="Center" Margin="-100,0,0,0">
+                        <Label Text="QCM Quiz" 
+                               FontSize="24" 
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                        <Label Text="Select a question set to begin" 
+                               FontSize="13" 
+                               TextColor="#5b5b6e"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+            
+            <!-- Question Sets List -->
+            <ScrollView Grid.Row="1" Padding="60,30">
+                <VerticalStackLayout Spacing="12">
+                    <CollectionView x:Name="SetsCollection" SelectionMode="None">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BackgroundColor="#14141e"
+                                        Stroke="#1e1e2e"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 10"
+                                        Margin="0,0,0,10"
+                                        Padding="0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnSetTapped" CommandParameter="{Binding .}"/>
+                                    </Border.GestureRecognizers>
+                                    <Grid ColumnDefinitions="Auto,*,Auto" Padding="20,18">
+                                        <!-- Icon -->
+                                        <Border Grid.Column="0" 
+                                                BackgroundColor="#1e1e2e" 
+                                                StrokeThickness="0"
+                                                HeightRequest="44" 
+                                                WidthRequest="44"
+                                                StrokeShape="RoundRectangle 10"
+                                                VerticalOptions="Center">
+                                            <Label Text="Py" FontSize="14" FontAttributes="Bold" TextColor="#e94560" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        </Border>
+                                        
+                                        <!-- Content -->
+                                        <VerticalStackLayout Grid.Column="1" Spacing="4" Margin="16,0" VerticalOptions="Center">
+                                            <Label Text="{Binding Name}" 
+                                                   FontSize="16" 
+                                                   FontAttributes="Bold"
+                                                   TextColor="White"/>
+                                            <Label Text="{Binding Description}" 
+                                                   FontSize="12" 
+                                                   TextColor="#5b5b6e"/>
+                                            <HorizontalStackLayout Spacing="10" Margin="0,4,0,0">
+                                                <Border BackgroundColor="#1e1e2e" StrokeThickness="0" Padding="6,3" StrokeShape="RoundRectangle 4">
+                                                    <Label FontSize="10" TextColor="#e94560">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{Binding Questions.Count}"/>
+                                                                <Span Text=" questions"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                </Border>
+                                            </HorizontalStackLayout>
+                                        </VerticalStackLayout>
+                                        
+                                        <!-- Arrow -->
+                                        <Border Grid.Column="2" 
+                                                BackgroundColor="#e94560" 
+                                                StrokeThickness="0"
+                                                HeightRequest="36" 
+                                                WidthRequest="36"
+                                                StrokeShape="RoundRectangle 18"
+                                                VerticalOptions="Center">
+                                            <Label Text="→" FontSize="14" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </ScrollView>
+            
+        </Grid>
+    </Grid>
+    
+</ContentPage>

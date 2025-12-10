@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Intello.Pages.FlashcardPage"
+             Title="Flashcards"
+             BackgroundColor="#0a0a12">
+    
+    <Grid>
+        <!-- Grid Background Pattern -->
+        <Grid ColumnDefinitions="*,*,*,*,*,*,*,*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*" Opacity="0.15">
+            <BoxView Grid.Column="0" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="1" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="2" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="3" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="4" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="5" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="6" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="7" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="8" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="9" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="10" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Row="0" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="1" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="2" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="3" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="4" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="5" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="6" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="7" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="8" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="9" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="10" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+        </Grid>
+        
+        <!-- Main Content -->
+        <Grid RowDefinitions="Auto,*">
+            
+            <!-- Header -->
+            <Border Grid.Row="0" BackgroundColor="#12121a" StrokeThickness="0" Padding="60,24">
+                <Grid ColumnDefinitions="Auto,*">
+                    <Border Grid.Column="0" 
+                            BackgroundColor="#1a1a24" 
+                            StrokeThickness="0"
+                            Padding="14,10"
+                            StrokeShape="RoundRectangle 8"
+                            VerticalOptions="Center">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBackClicked"/>
+                        </Border.GestureRecognizers>
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="←" FontSize="14" TextColor="#6b6b7e" VerticalOptions="Center"/>
+                            <Label Text="Back" FontSize="13" TextColor="#6b6b7e" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </Border>
+                </Grid>
+            </Border>
+            
+            <!-- Content -->
+            <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+                <Border BackgroundColor="#1a1a2e" 
+                        StrokeThickness="0"
+                        HeightRequest="90" 
+                        WidthRequest="90"
+                        StrokeShape="RoundRectangle 45"
+                        HorizontalOptions="Center">
+                    <Label Text="F" FontSize="36" FontAttributes="Bold" TextColor="#533483" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+                
+                <VerticalStackLayout Spacing="6" HorizontalOptions="Center">
+                    <Label Text="Flashcards" 
+                           FontSize="28" 
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Coming Soon" 
+                           FontSize="14" 
+                           TextColor="#533483"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+                
+                <Border BackgroundColor="#14141e"
+                        Stroke="#1e1e2e"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 10"
+                        Padding="24,20"
+                        HorizontalOptions="Center"
+                        MaximumWidthRequest="360">
+                    <Label Text="Memorize Python concepts with spaced repetition flashcards. This feature is under development." 
+                           FontSize="13" 
+                           TextColor="#5b5b6e"
+                           HorizontalTextAlignment="Center"
+                           LineBreakMode="WordWrap"/>
+                </Border>
+            </VerticalStackLayout>
+            
+        </Grid>
+    </Grid>
+    
+</ContentPage>

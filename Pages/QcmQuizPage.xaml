@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Intello.Pages.QcmQuizPage"
+             Title="Quiz"
+             BackgroundColor="#0a0a12">
+    
+    <Grid>
+        <!-- Grid Background Pattern -->
+        <Grid ColumnDefinitions="*,*,*,*,*,*,*,*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*" Opacity="0.15">
+            <BoxView Grid.Column="0" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="1" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="2" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="3" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="4" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="5" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="6" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="7" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="8" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="9" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="10" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Row="0" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="1" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="2" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="3" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="4" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="5" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="6" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="7" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="8" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="9" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="10" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+        </Grid>
+        
+        <!-- Main Content -->
+        <Grid RowDefinitions="Auto,*" Padding="0">
+            
+            <!-- Header -->
+            <Border Grid.Row="0" BackgroundColor="#12121a" StrokeThickness="0" Padding="60,24">
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <!-- Quit Button -->
+                    <Border Grid.Column="0" 
+                            BackgroundColor="#1e1418" 
+                            StrokeThickness="0"
+                            Padding="14,8"
+                            StrokeShape="RoundRectangle 8">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnQuitClicked"/>
+                        </Border.GestureRecognizers>
+                        <HorizontalStackLayout Spacing="6">
+                            <Label Text="×" FontSize="16" TextColor="#e94560" VerticalOptions="Center"/>
+                            <Label Text="Quit" FontSize="13" TextColor="#e94560" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </Border>
+                    
+                    <!-- Progress Center -->
+                    <VerticalStackLayout Grid.Column="1" Spacing="6" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label x:Name="SetNameLabel"
+                               FontSize="12" 
+                               TextColor="#5b5b6e"
+                               HorizontalOptions="Center"/>
+                        <Label x:Name="ProgressLabel"
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                    
+                    <!-- Progress Bar -->
+                    <Border Grid.Column="2" 
+                            BackgroundColor="#1a1a24" 
+                            StrokeThickness="0" 
+                            HeightRequest="6" 
+                            WidthRequest="120"
+                            StrokeShape="RoundRectangle 3"
+                            VerticalOptions="Center">
+                        <Border x:Name="ProgressBar" 
+                                BackgroundColor="#e94560" 
+                                StrokeThickness="0" 
+                                HeightRequest="6" 
+                                WidthRequest="40"
+                                StrokeShape="RoundRectangle 3"
+                                HorizontalOptions="Start"/>
+                    </Border>
+                </Grid>
+            </Border>
+            
+            <!-- Question Area -->
+            <ScrollView Grid.Row="1" Padding="60,30" BackgroundColor="Transparent">
+                <Grid ColumnDefinitions="*,500,*" ColumnSpacing="0" BackgroundColor="Transparent" 
+                      HorizontalOptions="Fill" VerticalOptions="Center">
+                    
+                    <!-- Spacer Left -->
+                    <BoxView Grid.Column="0" BackgroundColor="Transparent" Color="Transparent"/>
+                    
+                    <!-- Question Card - Centered -->
+                    <VerticalStackLayout Grid.Column="1" Spacing="20" BackgroundColor="Transparent"
+                                         HorizontalOptions="Center" VerticalOptions="Center">
+                        <Border BackgroundColor="#14141e"
+                                Stroke="#1e1e2e"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 12"
+                                Padding="0"
+                                VerticalOptions="Start">
+                        <Grid RowDefinitions="Auto,*">
+                            <!-- Question Header -->
+                            <Border Grid.Row="0" BackgroundColor="#18181e" StrokeThickness="0" Padding="24,16">
+                                <HorizontalStackLayout Spacing="10">
+                                    <Border BackgroundColor="#e94560" StrokeThickness="0" Padding="10,5" StrokeShape="RoundRectangle 6">
+                                        <Label Text="Question" FontSize="11" FontAttributes="Bold" TextColor="White"/>
+                                    </Border>
+                                    <Label Text="Select the correct answer" FontSize="12" TextColor="#5b5b6e" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+                            </Border>
+                            
+                            <!-- Question Text -->
+                            <VerticalStackLayout Grid.Row="1" Padding="24" Spacing="20">
+                                <Label x:Name="QuestionLabel"
+                                       FontSize="20" 
+                                       FontAttributes="Bold"
+                                       TextColor="White"
+                                       LineBreakMode="WordWrap"
+                                       HorizontalTextAlignment="Center"
+                                       HorizontalOptions="Center"/>
+                                
+                                <!-- Answer Buttons -->
+                                <VerticalStackLayout x:Name="AnswersStack" Spacing="10"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                    
+                    <!-- Feedback Panel - Below Question -->
+                    <Border x:Name="FeedbackPanel"
+                            BackgroundColor="#14141e"
+                            Stroke="#1e1e2e"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 12"
+                            Padding="0"
+                            VerticalOptions="Start"
+                            IsVisible="False">
+                        <Grid RowDefinitions="Auto,*,Auto">
+                            <!-- Feedback Header -->
+                            <Border x:Name="FeedbackHeader" Grid.Row="0" BackgroundColor="#141e1a" StrokeThickness="0" Padding="20,16">
+                                <HorizontalStackLayout Spacing="10">
+                                    <Label x:Name="FeedbackIcon" Text="✓" FontSize="18" TextColor="#00b894"/>
+                                    <Label x:Name="FeedbackTitle" Text="Correct!" FontSize="16" FontAttributes="Bold" TextColor="#00b894" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+                            </Border>
+                            
+                            <!-- Explanation -->
+                            <VerticalStackLayout Grid.Row="1" Padding="20" Spacing="12">
+                                <Label Text="EXPLANATION" FontSize="10" FontAttributes="Bold" TextColor="#5b5b6e" CharacterSpacing="1"/>
+                                <Label x:Name="ExplanationLabel"
+                                       FontSize="14" 
+                                       TextColor="#8b8b9e"
+                                       LineBreakMode="WordWrap"/>
+                            </VerticalStackLayout>
+                            
+                            <!-- Next Button -->
+                            <Border Grid.Row="2" BackgroundColor="#18181e" StrokeThickness="0" Padding="20,16">
+                                <Border x:Name="NextButton"
+                                        BackgroundColor="#e94560" 
+                                        StrokeThickness="0"
+                                        Padding="20,12"
+                                        StrokeShape="RoundRectangle 8"
+                                        HorizontalOptions="Fill">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnNextClicked"/>
+                                    </Border.GestureRecognizers>
+                                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="8">
+                                        <Label x:Name="NextButtonText" Text="Next Question" FontSize="14" FontAttributes="Bold" TextColor="White"/>
+                                        <Label Text="→" FontSize="14" TextColor="White"/>
+                                    </HorizontalStackLayout>
+                                </Border>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    
+                    </VerticalStackLayout>
+                    
+                    <!-- Spacer Right -->
+                    <BoxView Grid.Column="2" BackgroundColor="Transparent" Color="Transparent"/>
+                    
+                </Grid>
+            </ScrollView>
+            
+        </Grid>
+    </Grid>
+    
+</ContentPage>

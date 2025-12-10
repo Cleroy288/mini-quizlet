@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Intello.Pages.QcmResultsPage"
+             Title="Results"
+             BackgroundColor="#0a0a12">
+    
+    <Grid>
+        <!-- Grid Background Pattern -->
+        <Grid ColumnDefinitions="*,*,*,*,*,*,*,*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*" Opacity="0.15">
+            <BoxView Grid.Column="0" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="1" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="2" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="3" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="4" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="5" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="6" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="7" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="8" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="9" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Column="10" Grid.RowSpan="12" WidthRequest="1" Color="#2a2a3e" HorizontalOptions="End"/>
+            <BoxView Grid.Row="0" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="1" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="2" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="3" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="4" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="5" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="6" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="7" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="8" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="9" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+            <BoxView Grid.Row="10" Grid.ColumnSpan="12" HeightRequest="1" Color="#2a2a3e" VerticalOptions="End"/>
+        </Grid>
+        
+        <!-- Main Content -->
+        <ScrollView>
+            <Grid RowDefinitions="Auto,*" Padding="0">
+                
+                <!-- Hero Section -->
+                <Border Grid.Row="0" BackgroundColor="#12121a" StrokeThickness="0" Padding="60,40">
+                    <VerticalStackLayout Spacing="20" HorizontalOptions="Center">
+                        
+                        <!-- Icon -->
+                        <Border x:Name="ResultIconBorder"
+                                BackgroundColor="#1a241a" 
+                                StrokeThickness="0"
+                                HeightRequest="80" 
+                                WidthRequest="80"
+                                StrokeShape="RoundRectangle 40"
+                                HorizontalOptions="Center">
+                            <Label x:Name="ResultIcon" Text="✓" FontSize="36" FontAttributes="Bold" TextColor="#00b894" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        
+                        <Label Text="Quiz Complete" 
+                               FontSize="28" 
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                        
+                        <!-- Score Card -->
+                        <Border BackgroundColor="#14141e"
+                                Stroke="#1e1e2e"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 12"
+                                Padding="36,24"
+                                HorizontalOptions="Center">
+                            <HorizontalStackLayout Spacing="36">
+                                <VerticalStackLayout HorizontalOptions="Center">
+                                    <Label x:Name="ScoreLabel"
+                                           FontSize="40" 
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Score" FontSize="12" TextColor="#5b5b6e" HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                                
+                                <BoxView WidthRequest="1" HeightRequest="50" Color="#2a2a3e"/>
+                                
+                                <VerticalStackLayout HorizontalOptions="Center">
+                                    <Label x:Name="PercentLabel"
+                                           FontSize="40" 
+                                           FontAttributes="Bold"
+                                           TextColor="#00b894"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Accuracy" FontSize="12" TextColor="#5b5b6e" HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </Border>
+                        
+                        <!-- Action Buttons -->
+                        <HorizontalStackLayout Spacing="12" HorizontalOptions="Center" Margin="0,8,0,0">
+                            <Border BackgroundColor="#e94560" 
+                                    StrokeThickness="0"
+                                    Padding="24,12"
+                                    StrokeShape="RoundRectangle 8">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnTryAnotherClicked"/>
+                                </Border.GestureRecognizers>
+                                <Label Text="Try Another Set" FontSize="14" FontAttributes="Bold" TextColor="White"/>
+                            </Border>
+                            
+                            <Border BackgroundColor="#1a1a24" 
+                                    Stroke="#2a2a3e"
+                                    StrokeThickness="1"
+                                    Padding="24,12"
+                                    StrokeShape="RoundRectangle 8">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnDashboardClicked"/>
+                                </Border.GestureRecognizers>
+                                <Label Text="Dashboard" FontSize="14" TextColor="#6b6b7e"/>
+                            </Border>
+                        </HorizontalStackLayout>
+                        
+                    </VerticalStackLayout>
+                </Border>
+                
+                <!-- Errors Section -->
+                <VerticalStackLayout Grid.Row="1" Padding="60,30" Spacing="16">
+                    
+                    <!-- All Correct Message -->
+                    <Border x:Name="AllCorrectCard"
+                            BackgroundColor="#141e1a"
+                            Stroke="#00b894"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 12"
+                            Padding="24"
+                            IsVisible="False">
+                        <HorizontalStackLayout Spacing="16" HorizontalOptions="Center">
+                            <Label Text="✓" FontSize="28" FontAttributes="Bold" TextColor="#00b894" VerticalOptions="Center"/>
+                            <VerticalStackLayout VerticalOptions="Center">
+                                <Label Text="Perfect Score!" FontSize="18" FontAttributes="Bold" TextColor="#00b894"/>
+                                <Label Text="You answered all questions correctly" FontSize="13" TextColor="#5b5b6e"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Border>
+                    
+                    <!-- Errors Header -->
+                    <VerticalStackLayout x:Name="ErrorsSection" Spacing="14" IsVisible="False">
+                        <Label Text="Review Your Mistakes" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="White"/>
+                        <Label Text="Understanding mistakes helps you learn better" 
+                               FontSize="13" 
+                               TextColor="#5b5b6e"/>
+                        
+                        <!-- Errors List -->
+                        <VerticalStackLayout x:Name="ErrorsList" Spacing="12" Margin="0,8,0,0"/>
+                    </VerticalStackLayout>
+                    
+                </VerticalStackLayout>
+                
+            </Grid>
+        </ScrollView>
+    </Grid>
+    
+</ContentPage>
